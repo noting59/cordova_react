@@ -1,0 +1,15 @@
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+
+    &__input {
+
+        &:focus {
+            border-bottom: 1px solid #3f51b5 !important;
+        }
+
+        &--error {
+            border-bottom: 1px solid #a94442 !important;
+        }
+    }
+}
