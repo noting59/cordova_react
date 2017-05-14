@@ -20,11 +20,6 @@ body {
     color: #f44336;
 }
 
-.btn:hover,
-.btn:focus {
-    color: #fff;
-}
-
 .btn-social {
     position: relative;
     padding-left: 44px;
@@ -71,4 +66,24 @@ body {
     font-size: 1.6em;
     text-align: center;
     border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+.card.small {
+    height: auto !important;
+
+    .card-action {
+        position: relative;
+    }
+}
+
+.preloader-wrapper.big {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 57%;
+    left: 36%;
+
+    &.active {
+        z-index: 1000;
+    }
 }

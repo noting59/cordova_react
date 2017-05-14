@@ -23,7 +23,7 @@ class Greetings extends React.Component {
                 <img src={obj.img}ss/>
               </div>
               <div className="card-content">
-                <div>{obj.text}</div>
+                <div>{obj.text.substring(0, obj.text.indexOf("<br>"))}</div>
               </div>
               <div className="card-action">
                 <Link to={newsId}>Читать подробнее</Link>
@@ -34,15 +34,14 @@ class Greetings extends React.Component {
 
     componentWillMount() {
         this.props.news().then(
-            (data) => {
-                this.setState({count: data.data.response[0]});
-                let articles = {};
+            (res) => {
+                this.setState({count: res[0]});
+                res.shift();
+                let articles = [];
                 let count = 0;
-                for (let i of data.data.response) {
-                    if(typeof i === 'object') {
-                        articles[count] = {id: i.id, text: i.text, img: i.attachment.photo.src_big, date: i.date };
-                        count++;
-                    }
+                for (let i of res) {
+                    articles[count] = {id: i.id, text: i.text, img: i.attachment.photo.src_big, date: i.date };
+                    count++;
                 }
                 this.setState({articles: articles});
             },

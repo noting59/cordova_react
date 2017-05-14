@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const TextFieldGroup = ({ field, value, placeholder, error, type, onChange }) => {
+const TextFieldGroup = ({ field, value, label, error, type, onChange }) => {
     return (
         <div className={classnames("input-field col s12", { 'has-error': error })}>
             <input
@@ -10,10 +10,9 @@ const TextFieldGroup = ({ field, value, placeholder, error, type, onChange }) =>
                 value={value}
                 type={type}
                 name={field}
-                placeholder={placeholder}
                 className={classnames("validate form-container__input", { 'invalid': error })}
             />
-
+            <label htnlFor={field}>{label}</label>
             {error && <span className="help-block">{error}</span>}
         </div>
 

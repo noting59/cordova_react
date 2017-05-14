@@ -76,14 +76,14 @@ class LoginPage extends React.Component {
                            fields="name,email,picture,link,locale"
                            xfbml={true}
                            version="v2.5"
-                           className="btn btn-social btn-facebook"
+                           className="col s12 btn-social btn waves-effect btn-facebook"
                            callback={this.responseFacebook}
                            textButton="Connect with Facebook"/>
                          <VKLogin
                             apiId="5947767"
                             autoLoad={true}
                             scope="public_profile, email"
-                            className='btn btn-social btn-vk'
+                            className='col s12 btn-social btn waves-effect btn-vk'
                             textButton="Connect with VK"
                             callback={this.responseVk} />
                             {this.state.errors.social && <span className="help-block">{this.state.errors.social}</span>}

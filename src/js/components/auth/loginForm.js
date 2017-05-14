@@ -60,14 +60,14 @@ class LoginForm extends React.Component {
                     onChange = {this.onChange}
                     field = 'email'
                     error = {errors.email}
-                    placeholder = 'Email'
+                    label = 'Email'
                     value = {this.state.email}
                 />
                 <TextFieldGroup
                     onChange = {this.onChange}
                     field = 'password'
                     error = {errors.password}
-                    placeholder = 'Password'
+                    label = 'Password'
                     value = {this.state.password}
                     type  = 'password'
                 />

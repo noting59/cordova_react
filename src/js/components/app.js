@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './partials/navbar';
-import FlashMessagesList from './flash/flashMessagesList'
+import FlashMessagesList from './flash/flashMessagesList';
+import Preloader from './partials/preloader';
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
       <div>
         <Navbar />
         <FlashMessagesList />
+        <Preloader />
         {this.props.children}
       </div>
     );

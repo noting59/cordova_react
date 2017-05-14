@@ -65,21 +65,21 @@ class SignupForm extends React.Component {
                     onChange = {this.onChange}
                     field = 'name'
                     error = {errors.name}
-                    placeholder = 'Name'
+                    label = 'Name'
                     value = {this.state.name}
                 />
                 <TextFieldGroup
                     onChange = {this.onChange}
                     field = 'email'
                     error = {errors.email}
-                    placeholder = 'Email'
+                    label = 'Email'
                     value = {this.state.email}
                 />
                 <TextFieldGroup
                     onChange = {this.onChange}
                     field = 'password'
                     error = {errors.password}
-                    placeholder = 'Password'
+                    label = 'Password'
                     value = {this.state.password}
                     type  = 'password'
                 />
@@ -87,7 +87,7 @@ class SignupForm extends React.Component {
                     onChange = {this.onChange}
                     field = 'password_confirmation'
                     error = {errors.password_confirmation}
-                    placeholder = 'Confirm Password'
+                    label = 'Confirm Password'
                     value = {this.state.password_confirmation}
                     type  = 'password'
                 />

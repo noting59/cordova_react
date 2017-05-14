@@ -38,8 +38,8 @@ class NavigationBar extends React.Component {
 
         const guestLinks = (
             <div>
-            <li><Link to="/login" onClick={this.menuShowHide.bind(this)}><i className="material-icons">input</i>Login</Link></li>
-            <li><Link to="/signup" onClick={this.menuShowHide.bind(this)}><i className="material-icons">perm_identity</i>Sign Up</Link></li>
+            <li><Link to="/login" className="waves-teal waves-effect" onClick={this.menuShowHide.bind(this)}><i className="material-icons">input</i>Login</Link></li>
+            <li><Link to="/signup" className="waves-teal waves-effect" onClick={this.menuShowHide.bind(this)}><i className="material-icons">perm_identity</i>Sign Up</Link></li>
             </div>
         );
 
@@ -71,7 +71,8 @@ class NavigationBar extends React.Component {
                        <a href="#!name"><span className="white-text name">{ user ? user : 'Please login'}</span></a>
                      </div>
                    </li>
-                   <li><Link to="/" onClick={this.menuShowHide.bind(this)}><i className="material-icons">home</i>Home</Link></li>
+                   <li><Link to="/" className="waves-teal waves-effect" onClick={this.menuShowHide.bind(this)}><i className="material-icons">home</i>Home</Link></li>
+                   <li><Link to="/club" className="waves-teal waves-effect" onClick={this.menuShowHide.bind(this)}><i className="material-icons">business</i>Clubs</Link></li>
 
                    <li><div className="divider"></div></li>
 
