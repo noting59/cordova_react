@@ -10,13 +10,22 @@ class ClubsPage extends React.Component {
 
         this.state = {
             clubs: {},
+            search: ''
         };
     }
 
+    onChange(e) {
+        this.setState({ search: e.target.value });
+    }
+
     clubList(obj) {
-        console.log(obj.clubs);
-        const list = map(obj.clubs, (obj) =>
-            <li className="collection-item"><div>{obj.name}<Link to={`/club/${obj.id}`} className="secondary-content"><i className="material-icons">send</i></Link></div></li>
+        const list = map(obj.clubs, (obj) => {
+                if (obj.name.toLowerCase().indexOf(this.state.search.toLowerCase()) === -1 ) {
+                    return;
+                } else {
+                    return <li className="collection-item"><div>{obj.name}<Link to={`/club/${obj.id}`} className="secondary-content"><i className="material-icons">send</i></Link></div></li>
+                }
+            }
         );
         return (
             <ul className="collection with-header">
@@ -29,7 +38,6 @@ class ClubsPage extends React.Component {
     componentWillMount() {
         this.props.getAllClubs().then(
             (res) => {
-                console.log(res.data);
                 this.setState({ clubs: res.data })
             },
             (err) => {
@@ -51,7 +59,7 @@ class ClubsPage extends React.Component {
                           </div>
                         </div>
                         <h3>Clubs</h3>
-                        <input type="text" placeholder="Search for clubs" name="search" className="form-container__input"/>
+                        <input onChange={this.onChange.bind(this)} type="text" placeholder="Search for clubs" name="search" className="form-container__input"/>
                     </div>
 
                     {clubsList}
