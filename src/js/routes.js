@@ -6,8 +6,9 @@ import App from './components/app';
 import Greetings from './components/greetings';
 import SignupPage from './components/auth/signupPage';
 import LoginPage from './components/auth/loginPage';
-import Blog from './components/blog'
-import ClubsPage from './components/clubsPage'
+import Blog from './components/blog';
+import ClubsPage from './components/clubsPage';
+import SingleClub from './components/singleClub';
 
 import requireAuth from './utils/requireAuth';
 
@@ -18,5 +19,6 @@ export default (
         <Route path="login" component={LoginPage} />
         <Route path="blog" component={requireAuth(Blog)} />
         <Route path="club" component={ClubsPage} />
+        <Route path="club/:clubId" component={SingleClub} />
     </Route>
 )
